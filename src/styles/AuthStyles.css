@@ -1,0 +1,168 @@
+/* src/pages/AuthStyles.css */
+
+/* body stili auth sayfaları için özelleştirildi, 
+   eğer App.tsx tüm body'yi kaplıyorsa bu gerekmeyebilir,
+   direkt .auth-container'a odaklanılır.
+   Şimdilik, ayrı HTML dosyaları varsayımıyla bırakıyorum.
+*/
+/*
+body.auth-page-body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-bg-app, #f0f2f5); 
+    font-family: var(--font-primary, 'Roboto', sans-serif);
+    padding: 20px; 
+}
+*/
+
+.auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Mobil için kenar boşlukları */
+    min-height: 80vh; /* Sayfanın ortasında durması için */
+}
+
+.auth-card {
+    background-color: var(--color-bg-chat, #ffffff);
+    padding: var(--spacing-lg, 24px) var(--spacing-xl, 32px);
+    border-radius: var(--border-radius-lg, 16px);
+    box-shadow: 0 4px 20px var(--color-shadow, rgba(0, 0, 0, 0.1));
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-logo {
+    max-width: 100px;
+    margin-bottom: var(--spacing-md, 16px);
+}
+
+.auth-header h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-text-primary, #1f1f1f);
+    margin-bottom: var(--spacing-sm, 8px);
+}
+
+.auth-header p {
+    font-size: 1em;
+    color: var(--color-text-secondary, #5f6368);
+    margin-bottom: var(--spacing-lg, 24px);
+}
+
+.auth-form .form-group {
+    margin-bottom: var(--spacing-md, 16px);
+    text-align: left;
+}
+
+.auth-form .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm, 8px);
+    color: var(--color-text-primary, #333);
+    font-size: 0.9em;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border, #dadce0);
+    border-radius: var(--border-radius-md, 8px);
+    font-family: var(--font-secondary, 'Roboto', sans-serif);
+    font-size: 1em;
+    background-color: var(--color-bg-input, #f0f2f5);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input[type="email"]:focus,
+.auth-form input[type="password"]:focus {
+    outline: none;
+    border-color: var(--color-text-accent, #1a73e8);
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.form-actions {
+    margin-top: var(--spacing-lg, 24px);
+    margin-bottom: var(--spacing-md, 16px);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--color-text-accent, #1a73e8);
+    color: var(--color-text-on-accent, #ffffff);
+    border: none;
+    border-radius: var(--border-radius-md, 8px);
+    font-size: 1em;
+    font-weight: 500;
+    font-family: var(--font-primary, 'Google Sans', sans-serif);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.auth-button:hover:not(:disabled) {
+    opacity: 0.9;
+}
+.auth-button:disabled {
+    background-color: var(--color-text-secondary);
+    cursor: not-allowed;
+}
+
+
+.error-message { /* Hem form içinde hem genel hata mesajları için */
+    color: #dc3545; 
+    font-size: 0.9em;
+    margin-top: var(--spacing-md, 16px);
+    min-height: 1.2em; 
+    text-align: center; /* Form içindeki hata mesajları için sola hizalı kalabilir */
+}
+.auth-form .error-message { /* Form içindeki için özel ayar */
+    text-align: left;
+    margin-top: var(--spacing-xs); /* Input'a daha yakın */
+}
+
+
+.auth-footer {
+    margin-top: var(--spacing-lg, 24px);
+    font-size: 0.9em;
+}
+
+.auth-footer p {
+    margin-bottom: var(--spacing-sm, 8px);
+    color: var(--color-text-secondary, #5f6368);
+}
+
+.auth-footer a {
+    color: var(--color-text-accent, #1a73e8);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobil Uyum */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: var(--spacing-md, 16px) var(--spacing-lg, 24px);
+        box-shadow: none; /* Mobilde gölgeyi kaldırabiliriz */
+        border-radius: 0;
+        min-height: 100vh; /* Mobilde tüm ekranı kaplasın */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .auth-header h1 {
+        font-size: 1.5em;
+    }
+    .auth-footer {
+        margin-top: auto; /* Linkleri en alta iter */
+        padding-top: var(--spacing-lg);
+    }
+}
